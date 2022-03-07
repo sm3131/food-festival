@@ -10,8 +10,8 @@ module.exports = {
         tickets: "./assets/js/tickets.js"
     },
     output: {
-        filename: "[name].bundle.js",
         path: __dirname + "/dist",
+        filename: "[name].bundle.js"
     },
     module: {
         rules: [
