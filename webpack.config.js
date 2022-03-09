@@ -1,8 +1,8 @@
 const path = require("path");
 const webpack = require("webpack");
-const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
-module.exports = {
+const config = {
     entry: {
         app: "./assets/js/script.js",
         events: "./assets/js/events.js",
@@ -25,7 +25,7 @@ module.exports = {
                             name(file) {
                                 return "[path][name].[ext]"
                             },
-                            publicPath: function (url) {
+                            publicPath(url) {
                                 return url.replace("../", "/assets/")
                             }
                         }
@@ -48,3 +48,5 @@ module.exports = {
     ],
     mode: 'development'
 };
+
+module.exports = config;
